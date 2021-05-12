@@ -1,0 +1,31 @@
+{
+  "name": "simple-apollo-graphql-gateway-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "concurrently -k npm:server:*",
+    "server:users": "nodemon users.js",
+    "server:posts": "nodemon posts.js",
+    "server:graphql": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Violet-coder/Simple-Apollo-GraphQL-Gateway-Service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Violet-coder/Simple-Apollo-GraphQL-Gateway-Service/issues"
+  },
+  "homepage": "https://github.com/Violet-coder/Simple-Apollo-GraphQL-Gateway-Service#readme",
+  "dependencies": {
+    "@apollo/federation": "^0.25.0",
+    "@apollo/gateway": "^0.28.1",
+    "apollo-server": "^2.24.0",
+    "date-and-time": "^1.0.0",
+    "graphql": "^15.5.0",
+    "graphql-iso-date": "^3.6.1"
+  }
+}
