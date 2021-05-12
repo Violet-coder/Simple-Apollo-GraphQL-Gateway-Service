@@ -10,7 +10,7 @@ const typeDefs = gql`
   type User @key(fields: "id") {
     id: ID!
     name: String
-}
+  }
 
   extend type Query {
     fetchUser(id: ID!): User
@@ -19,11 +19,19 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
-  User: {
-    __resolveReference(ref){
-      return getUserByID(ref.id)
-    }
-  },
+  // Post: {
+  //   async author(post) {
+  //     const users = await getAllUsers()
+  //     console.log(users.filter((user)=> user.id === parseInt(post.authorId)))
+  //     return users.filter((user)=> user.id === parseInt(post.authorId))
+  //   }
+  // },
+
+  // User: {
+  //   __resolveReference(ref){
+  //     return getUserByID(ref.id)
+  //   }
+  // },
 
   Query: {
     fetchUser(_, { id }) {

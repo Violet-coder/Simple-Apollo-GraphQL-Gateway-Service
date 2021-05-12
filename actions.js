@@ -17,6 +17,8 @@ const getAllUsers = () => {
 const getUserByID = (ID) => {
     const users = getAllUsers()
     const targetUser = users.filter((user) => user.id === parseInt(ID.id))
+    log(ID.id)
+    log(targetUser)
     if (targetUser.length > 0){
         return targetUser[0]
     } else{
