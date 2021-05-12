@@ -16,11 +16,12 @@ const typeDefs = gql`
     body: String
     date: Date!
     authorId: ID!
-    author: User 
+    author: User @provides(fields: "name")
    
   }
   extend type User @key(fields: "id"){
-    id: ID! @external
+    id: ID! @external 
+    name: String @external 
     posts: [Post]
   }
   extend type Query {
