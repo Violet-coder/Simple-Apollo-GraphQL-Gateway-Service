@@ -16,7 +16,12 @@ const typeDefs = gql`
     title: String
     body: String
     date: Date!
-    authorId: ID
+    authorId: User
+  }
+
+  extend type User @key(fields: "id"){
+    id: ID! @external
+    posts: [Post]
   }
 
   extend type Query {
@@ -27,23 +32,21 @@ const typeDefs = gql`
 
 const resolvers = {
   Date: GraphQLDateTime,
+  User: {
+      async posts(user){
+          const posts = await getAllPosts()
+          return posts.filter(({authorId}) => authorId === parseInt(user.id))
+      }
+  },
   Post: {
-    __resolveReference(ref){
-      return getPostByID(ref.id)
+    authorId(post){
+      return post.authorId.map(id => ({__typename: "User", id }))
     }
   },
-//   User: {
-//       async fetchAllPosts(User){
-//           const posts = await getAllPosts()
-//           return posts.filter(({authorId}) => authorId === parseInt(User.id))
-//       }
-//   },
-//   Post: {
-//     getPostByID(id)
-//   },
+
   Query: {
     fetchPost(_, { id }) {
-      return getPostByID(id)
+      return getPostByID({id})
     },
     fetchAllPosts() {
       return getAllPosts()

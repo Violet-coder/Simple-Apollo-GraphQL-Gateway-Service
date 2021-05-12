@@ -17,7 +17,7 @@ const typeDefs = gql`
     fetchAllUsers: [User]
   }
 `;
-// fetchAllUsers fetchUser
+
 const resolvers = {
   User: {
     __resolveReference(ref){
