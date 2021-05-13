@@ -4,7 +4,7 @@ const { GraphQLDateTime } = "graphql-iso-date";
 const { ApolloServer, gql } = require('apollo-server');
 const { buildFederatedSchema } = require('@apollo/federation');
 
-const { getAllPosts, getPostByID, getAllUsers, getUserByID } = require('./actions')
+const { getAllPosts, getPostByID, getAllUsers } = require('./actions')
 
 const port = 4002;
 
