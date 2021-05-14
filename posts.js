@@ -16,8 +16,7 @@ const typeDefs = gql`
     body: String
     date: Date!
     authorId: ID!
-    author: User @provides(fields: "name")
-   
+    author: User @provides(fields: "name")  
   }
   extend type User @key(fields: "id"){
     id: ID! @external 
