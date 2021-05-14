@@ -1,4 +1,5 @@
 'use strict';
+// Functions to fetch data from database(json folder)
 
 const log = console.log
 const fs = require('fs');

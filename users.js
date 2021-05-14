@@ -1,4 +1,4 @@
-// User microservice
+// Users microservice
 const { ApolloServer, gql } = require('apollo-server');
 const { buildFederatedSchema } = require('@apollo/federation');
 
@@ -19,20 +19,7 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
-  // Post: {
-  //   async author(post) {
-  //     const users = await getAllUsers()
-  //     console.log(users.filter((user)=> user.id === parseInt(post.authorId)))
-  //     return users.filter((user)=> user.id === parseInt(post.authorId))
-  //   }
-  // },
-
-  // User: {
-  //   __resolveReference(ref){
-  //     return getUserByID(ref.id)
-  //   }
-  // },
-
+  
   Query: {
     fetchUser(_, { id }) {
       return getUserByID({id})

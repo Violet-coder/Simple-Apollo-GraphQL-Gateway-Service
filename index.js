@@ -1,3 +1,4 @@
+//Apollo GraphQL Gateway service
 const { ApolloServer } = require('apollo-server');
 const { ApolloGateway } = require('@apollo/gateway');
 
