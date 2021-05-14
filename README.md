@@ -24,7 +24,7 @@ npm install
 npm run server
 ```
 
-- You should be able to open the graphQL GUI in a browser window by entering localhost:4000 in the URL bar.
+- You should be able to open the graphQL GUI in a browser window by entering `http://localhost:4000/` in the URL bar.
 
 ## Object Fields
 
